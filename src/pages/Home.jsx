@@ -10,17 +10,20 @@ const Home2 = () => {
 
   return (
     <div>
-      <div className='grid grid-cols-3 gap-4'>
-        <div className='col-span-3 bg-[#4e937a] rounded-2xl py-10 px-20 h-[250px]'>
-          <h2 className='text-7xl text-center text-white leading-tight'>
-            STRONG CALL TO ACTION MESSAGE
-          </h2>
-        </div>
-        <div className='bg-[#849483] col-span-3 mt-5 rounded-3xl h-[1310px]' onClick={goNext}>
-          <video autoPlay loop muted className='object-cover z-[-1] w-full h-full rounded-3xl'>
-            <source src={GamePlayVideo} type='video/mp4' />
-          </video>
-        </div>
+      <div className='bg-[transparent] w-full' style={{ fontSize: '65px', fontWeight: 700 }}>
+        <h2 className='text-center text-white'>
+          MATCH THE CARDS & WIN
+        </h2>
+      </div>
+      <div className='bg-[#FFAFAF] mt-5 w-[940px] h-[1265px]'>
+        <video autoPlay loop muted className='object-cover z-[-1] w-full h-full rounded-3xl'>
+          <source src={GamePlayVideo} type='video/mp4' />
+        </video>
+        <button onClick={goNext} className="w-[210px] h-[210px] bg-[#595959] rounded-full absolute top-0 bottom-0 left-0 right-0 m-auto">
+          <svg className="m-auto" width="100" height="100" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.5959 13.1919L0.414128 25.9986L0.414129 0.385252L22.5959 13.1919Z" fill="#D9D9D9" />
+          </svg>
+        </button>
       </div>
     </div>
   )
