@@ -204,3 +204,60 @@ body {
     }
   }
 }
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #107C10;
+}
+
+.card-border-green {
+  border: 1px solid #107C10;
+  border-radius: 15px;
+}
+
+.card-border-white {
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.card-2x2 {
+  width: 100px;
+  height: 100px;
+}
+
+.card-4x4 {
+  width: 150px;
+  height: 235px;
+}
+
+.instruction {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  align-items: flex-start;
+
+  .instruction-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    color: white;
+    font-size: 70px;
+    font-weight: 700;
+    background-color: #0000007a;
+  }
+  .description {
+    color: white;
+    text-align: justify;
+    width: calc(100% - 90px);
+    padding: 0 50px 0 50px;
+    font-size: 50px;
+    font-weight: 400;
+  }
+}
