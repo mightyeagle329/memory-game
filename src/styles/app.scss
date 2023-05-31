@@ -210,7 +210,32 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #107C10;
+  transition: all 0.2s linear;
+
+  .question-svg {
+    fill: #000;
+  }
+
+  .hidden-svg {
+    display: none;
+    fill: #000;
+  }
+
+  &.flip {
+    transform: perspective(100px) rotateY(180deg);
+
+    .question-svg {
+      display: none;
+      fill: #282a35;
+    }
+
+    .hidden-svg {
+      display: block;
+      transform: perspective(100px) rotateY(180deg);
+    }
+  }
 }
+
 
 .card-border-green {
   border: 1px solid #107C10;
