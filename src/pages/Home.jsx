@@ -10,7 +10,7 @@ const Home2 = () => {
 
   return (
     <div>
-      <div className='bg-[transparent] w-full' style={{ fontSize: '65px', fontWeight: 700 }}>
+      <div className='bg-[transparent] w-full [font-size:65px] font-extrabold'>
         <h2 className='text-center text-white'>
           MATCH THE CARDS & WIN
         </h2>

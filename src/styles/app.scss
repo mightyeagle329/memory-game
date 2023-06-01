@@ -145,8 +145,8 @@ body {
 
     &-6 {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(6, 1fr);
+      grid-template-columns: repeat(6, 150px);
+      grid-template-rows: repeat(4, 235px);
       grid-column-gap: 10px;
       grid-row-gap: 10px;
     }
@@ -161,13 +161,13 @@ body {
   }
 
   &-card {
-    flex: 0 0 23%;
+    // flex: 0 0 23%;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f2f2f280;
-    border-radius: 5px;
+    background: #107C10;
+    border-radius: 15px;
     transition: all 0.2s linear;
     cursor: pointer;
 
@@ -181,7 +181,6 @@ body {
     }
 
     &.flip {
-      background: #42bafb !important;
       transform: perspective(100px) rotateY(180deg);
 
       .question-svg {
@@ -199,9 +198,9 @@ body {
       background: #76db82 !important;
     }
 
-    &:hover {
-      background: #d3d3d3;
-    }
+    // &:hover {
+    //   background: #d3d3d3;
+    // }
   }
 }
 
@@ -277,6 +276,7 @@ body {
     font-weight: 700;
     background-color: #0000007a;
   }
+
   .description {
     color: white;
     text-align: justify;
@@ -284,5 +284,37 @@ body {
     padding: 0 50px 0 50px;
     font-size: 50px;
     font-weight: 400;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(.9);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hg-theme-default {
+  background-color: #f5f5f5 !important;
+
+  .hg-button {
+    background-color: #B1B1B1 !important;
   }
 }

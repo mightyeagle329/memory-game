@@ -4,16 +4,10 @@ import Background from '../components/Background.jsx'
 
 function Game() {
   return (
-    <>
-      <div className="context">
-        <div className="game-container">
-          <ScoreBoard />
-          <GameTable />
-        </div>
-      </div>
-
-      <Background />
-    </>
+    <div className="w-full flex justify-center items-center flex-col">
+      {/* <ScoreBoard /> */}
+      <GameTable />
+    </div>
   )
 }
 

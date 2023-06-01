@@ -1,5 +1,5 @@
 import { shuffledRandomCards } from '../../utils/different.js'
-import images from '../../utils/loadSvg.js'
+import images from '../../utils/loadCards.js'
 
 const init = {
   score: 0,
@@ -15,7 +15,7 @@ export const game = {
   state: init,
   reducers: {
     reset(_, payload) {
-      const cards = shuffledRandomCards(images, (payload * payload) / 2)
+      const cards = shuffledRandomCards(images, (6 * 4) / 2)
 
       return { ...init, cards, successCards: new Set() }
     },

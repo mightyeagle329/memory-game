@@ -8,6 +8,7 @@ import './styles/app.scss'
 import MasterLayout from "./layout/Master"
 import Instruction from "./pages/Instruction"
 import CollectData from "./pages/CollectData"
+import StackUp from "./pages/StackUp"
 import ThankYou from "./pages/ThankYou"
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/game" element={<Game />} />
         <Route path="/win" element={<Win />} />
         <Route path='/collect-data' element={<CollectData />} />
+        <Route path='/stack-up' element={<StackUp />} />
         <Route path='/thank-you' element={<ThankYou />} />
       </Routes>
     </MasterLayout>

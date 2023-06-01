@@ -19,7 +19,7 @@ const CollectData = () => {
   })
 
   const goNext = () => {
-    navigate("/thank-you")
+    navigate("/stack-up")
   }
 
   const onKeyboardInit = (keyboard) => {
@@ -154,143 +154,76 @@ const CollectData = () => {
 
   return (
     <div>
-      <div className='grid grid-cols-3 gap-4'>
-        <div className='col-span-3 bg-[#4e937a] rounded-2xl py-12 px-12 h-[250px]'>
-          <h1 className='text-6xl mt-10 text-center text-white'>Instructions</h1>
-        </div>
-        <div className='col-span-3 mt-20 rounded-3xl h-[1310px]'>
-          <form className='flex flex-col gap-4'>
-            <div className='grid grid-cols-2 gap-12'>
-              <div className="col-span-2">
-                <input
-                  value={formData.firstName}
-                  readOnly
-                  onFocus={(e) => onInputFocus("firstName", e.target.value)}
-                  type='text'
-                  placeholder='Nick Name'
-                  className='bg-gray-50 border border-gray-300 text-gray-900 text-5xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-                  autoComplete='off'
-                  required
-                />
-              </div>
-              {/* <div>
-                <input
-                  value={formData.lastName}
-                  readOnly
-                  onFocus={(e) => onInputFocus("lastName", e.target.value)}
-                  type='text'
-                  placeholder='Last Name'
-                  className='bg-gray-50 border border-gray-300 text-gray-900 text-5xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-                  autoComplete='off'
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  value={formData.mobile}
-                  readOnly
-                  onFocus={(e) => onInputFocus("mobile", e.target.value)}
-                  type='text'
-                  placeholder='Mobile'
-                  className='bg-gray-50 border border-gray-300 text-gray-900 text-5xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-                  autoComplete='off'
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  value={formData.email}
-                  readOnly
-                  onFocus={(e) => onInputFocus("email", e.target.value)}
-                  type='email'
-                  placeholder='Email'
-                  className='bg-gray-50 border border-gray-300 text-gray-900 text-5xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-                  autoComplete='off'
-                  required
-                />
-              </div> */}
-              {/* <div className='col-span-2 flex items-center mt-4 mb-8'>
-                <input
-                  checked={formData.messageMe}
-                  onChange={onMessageMeChange}
-                  id='default-checkbox'
-                  type='checkbox'
-                  className='w-16 h-16 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
-                />
-                <label
-                  htmlFor='default-checkbox'
-                  className='ml-6 text-5xl font-medium text-gray-600 dark:text-gray-300'
-                >
-                  Yes! Message me!!!
-                </label>
-              </div> */}
-              <div className='col-span-2'>
-                <button
-                  onClick={onSubmit}
-                  type='button'
-                  className='w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-4xl px-20 py-8 m-auto mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <div className='keyboard-wrapper m-auto absolute w-full left-0 p-12 bottom-4'>
-            <Keyboard
-              layoutName={keyLayoutName}
-              onChange={onChange}
-              disableButtonHold={true}
-              onKeyPress={onKeyPress}
-              onInit={onKeyboardInit}
-              stopMouseUpPropagation={true}
-              stopMouseDownPropagation={true}
-              layout={{
-                default: [
-                  "q w e r t y u i o p",
-                  "a s d f g h j k l",
-                  "{shift} z x c v b n m {backspace}",
-                  "{numbers} {@} {-} {_} {=} {#} {+} {.} {.com}",
-                ],
-                shift: [
-                  "Q W E R T Y U I O P",
-                  "A S D F G H J K L",
-                  "{shift} Z X C V B N M {backspace}",
-                  "{numbers} {@} {-} {_} {=} {#} {+} {.} {.com}",
-                ],
-                numbers: ["1 2 3", "4 5 6", "7 8 9", "{abc} 0 {backspace}"],
-              }}
-              display={{
-                "{numbers}": "123",
-                "{ent}": "return",
-                "{escape}": "esc ⎋",
-                "{tab}": "tab ⇥",
-                "{backspace}": "⌫",
-                "{capslock}": "caps lock ⇪",
-                "{shift}": "⇧",
-                "{controlleft}": "ctrl ⌃",
-                "{controlright}": "ctrl ⌃",
-                "{altleft}": "alt ⌥",
-                "{altright}": "alt ⌥",
-                "{metaleft}": "cmd ⌘",
-                "{metaright}": "cmd ⌘",
-                "{abc}": "ABC",
-                "{@}": "@",
-                "{-}": "-",
-                "{_}": "_",
-                "{.}": ".",
-                "{.com}": ".com",
-                "{#}": "#",
-                "{+}": "+",
-                "{=}": "=",
-                "{☺}": "☺",
-                "{space}": "space",
-                "{return}": "return",
-              }}
-            />
-          </div>
-        </div>
+      <input
+        value={formData.firstName}
+        readOnly
+        onFocus={(e) => onInputFocus("firstName", e.target.value)}
+        type='text'
+        placeholder='ENTER YOUR GAMERTAG'
+        className='w-[835px] text-center px-16 py-12 rounded-[30px] border-black border-4 mt-[100px] [color:#999999] [font-size:50px] font-bold'
+        autoComplete='off'
+        required
+      />
+      <div className="mt-[90px]">
+        <Keyboard
+          layoutName={keyLayoutName}
+          onChange={onChange}
+          disableButtonHold={true}
+          onKeyPress={onKeyPress}
+          onInit={onKeyboardInit}
+          stopMouseUpPropagation={true}
+          stopMouseDownPropagation={true}
+          layout={{
+            default: [
+              "q w e r t y u i o p",
+              "a s d f g h j k l",
+              "{shift} z x c v b n m {backspace}",
+              "{numbers} {@} {-} {_} {=} {#} {+} {.} {.com}",
+            ],
+            shift: [
+              "Q W E R T Y U I O P",
+              "A S D F G H J K L",
+              "{shift} Z X C V B N M {backspace}",
+              "{numbers} {@} {-} {_} {=} {#} {+} {.} {.com}",
+            ],
+            numbers: ["1 2 3", "4 5 6", "7 8 9", "{abc} 0 {backspace}"],
+          }}
+          display={{
+            "{numbers}": "123",
+            "{ent}": "return",
+            "{escape}": "esc ⎋",
+            "{tab}": "tab ⇥",
+            "{backspace}": "⌫",
+            "{capslock}": "caps lock ⇪",
+            "{shift}": "⇧",
+            "{controlleft}": "ctrl ⌃",
+            "{controlright}": "ctrl ⌃",
+            "{altleft}": "alt ⌥",
+            "{altright}": "alt ⌥",
+            "{metaleft}": "cmd ⌘",
+            "{metaright}": "cmd ⌘",
+            "{abc}": "ABC",
+            "{@}": "@",
+            "{-}": "-",
+            "{_}": "_",
+            "{.}": ".",
+            "{.com}": ".com",
+            "{#}": "#",
+            "{+}": "+",
+            "{=}": "=",
+            "{☺}": "☺",
+            "{space}": "space",
+            "{return}": "return",
+          }}
+        />
       </div>
+      <button onClick={onSubmit} className="bg-[#9BF00B] flex justify-center items-center px-12 py-3 m-auto mt-48 rounded-lg [font-size:50px] font-extrabold [color:#054B16]">
+        <span>SUBMIT</span>
+        <span className="w-[50px]"></span>
+        <svg width="24" height="35" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.52975 5.74727L4.35512 10.8279H0.543686L3.74641 5.74727L0.543686 0.666626H4.35512L7.52975 5.74727Z" fill="#054A17" />
+        </svg>
+      </button>
     </div>
   )
 }

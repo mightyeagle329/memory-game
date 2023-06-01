@@ -1,7 +1,7 @@
 export const level = {
   state: {
     levels: [2, 4, 6, 8],
-    current: 4
+    current: 6
   },
   reducers: {
     change(state, payload) {
