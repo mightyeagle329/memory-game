@@ -23,7 +23,7 @@ export function getBackground(route) {
 }
 
 export function visibleHeader(route) {
-    const routes = ['/win', '/stack-up', '/thank-you', '/stack-up'];
+    const routes = ['/win', '/thank-you', '/stack-up'];
 
     if (routes.includes(route)) return 'none';
     else return 'flex';
