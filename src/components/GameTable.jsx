@@ -16,7 +16,7 @@ function GameTable() {
 
   useEffect(() => {
     if (successCards.size === cards.length / 2) {
-      navigate('/collect-data')
+      navigate('/win')
     }
   }, [navigate, cards.length, successCards.size])
 

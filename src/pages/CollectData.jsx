@@ -19,7 +19,7 @@ const CollectData = () => {
   })
 
   const goNext = () => {
-    navigate("/stack-up")
+    navigate("/game")
   }
 
   const onKeyboardInit = (keyboard) => {

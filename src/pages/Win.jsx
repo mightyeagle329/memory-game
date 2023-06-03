@@ -6,11 +6,18 @@ import HomeSVG from '../assets/svg/home.svg'
 import Background from '../components/Background.jsx'
 import Confetti from 'react-dom-confetti';
 import { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom"
 
 function Win() {
   const dispatch = useDispatch()
   const { score } = useSelector((state) => state.game)
   const { current } = useSelector((state) => state.level)
+
+  const navigate = useNavigate()
+
+  const goNext = () => {
+    navigate("/stack-up")
+  }
 
   const bestScore = localStorage.getItem('bestScore')
   localStorage.setItem('bestScore', Math.max(score, bestScore))
@@ -40,7 +47,7 @@ function Win() {
   };
 
   return (
-    <div className='w-[1080px] h-[1920px] top-0 fixed'>
+    <div className='w-[1080px] h-[1920px] top-0 fixed' onClick={goNext}>
       <div className='absolute top-0 bottom-0 left-0 right-0 m-auto w-[715px] h-[990px] bg-[#107C10]'>
         <div className='flex flex-col text-white text-center font-extrabold mt-48 [font-size:130px]'>
           <span className='m-0 p-0 [line-height:1em]'>WELL</span>

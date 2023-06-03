@@ -9,7 +9,7 @@ const Instruction = () => {
   const navigate = useNavigate()
 
   const goNext = () => {
-    navigate("/game")
+    navigate("/collect-data")
   }
 
   const toggleFlip = (index) => {
