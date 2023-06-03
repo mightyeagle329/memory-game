@@ -7,6 +7,7 @@ import Background from '../components/Background.jsx'
 import Confetti from 'react-dom-confetti';
 import { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom"
+import SvgLines from 'react-mt-svg-lines';
 
 function Win() {
   const dispatch = useDispatch()
@@ -58,6 +59,11 @@ function Win() {
         </div>
         <div className='flex flex-col text-white text-center font-extrabold m-24'>
           <span className='[font-size:55px]'>Your time is</span>
+          <SvgLines animate={true} duration={3000}>
+            <svg width="100" height="100">
+              <text x="50%" y="50%" font-size="50" text-anchor="middle" dominant-baseline="middle">{Math.floor(time / 60) + ':' + (time % 60 < 10 ? '0' + time % 60 : time % 60)}</text>
+            </svg>
+          </SvgLines>
           <span className='[font-size:145px] [animation:opacity_infinite_1s,scale_infinite_1s]'>{Math.floor(time / 60) + ':' + (time % 60 < 10 ? '0' + time % 60 : time % 60)}</span>
         </div>
       </div>
