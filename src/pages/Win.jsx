@@ -4,6 +4,8 @@ import { ReactSVG } from 'react-svg'
 import ResetSVG from '../assets/svg/reset.svg'
 import HomeSVG from '../assets/svg/home.svg'
 import Background from '../components/Background.jsx'
+import Confetti from 'react-dom-confetti';
+import { useEffect, useState } from 'react'
 
 function Win() {
   const dispatch = useDispatch()
@@ -15,12 +17,37 @@ function Win() {
 
   const time = 68;
 
+  const [activeProp, setActiveProp] = useState(true);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => setActiveProp((prev) => !prev), 1500);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const config = {
+    angle: 90,
+    spread: "302",
+    startVelocity: 40,
+    elementCount: "93",
+    dragFriction: "0.1",
+    duration: "1340",
+    stagger: "0",
+    width: "30px",
+    height: "30px",
+    perspective: "500px",
+    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+  };
+
   return (
     <div className='w-[1080px] h-[1920px] top-0 fixed'>
       <div className='absolute top-0 bottom-0 left-0 right-0 m-auto w-[715px] h-[990px] bg-[#107C10]'>
         <div className='flex flex-col text-white text-center font-extrabold mt-48 [font-size:130px]'>
           <span className='m-0 p-0 [line-height:1em]'>WELL</span>
           <span className='m-0 p-0 [line-height:1em]'>DONE!</span>
+        </div>
+        <div className='flex align-center justify-center'>
+          <Confetti active={activeProp} config={config} />
         </div>
         <div className='flex flex-col text-white text-center font-extrabold m-24'>
           <span className='[font-size:55px]'>Your time is</span>
