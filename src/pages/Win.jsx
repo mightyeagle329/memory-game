@@ -50,20 +50,23 @@ function Win() {
   return (
     <div className='w-[1080px] h-[1920px] top-0 fixed' onClick={goNext}>
       <div className='absolute top-0 bottom-0 left-0 right-0 m-auto w-[715px] h-[990px] bg-[#107C10]'>
-        <div className='flex flex-col text-white text-center font-extrabold mt-48 [font-size:130px]'>
-          <span className='m-0 p-0 [line-height:1em]'>WELL</span>
-          <span className='m-0 p-0 [line-height:1em]'>DONE!</span>
+        <div className='flex flex-col text-white text-center font-extrabold mt-48'>
+          <span className='m-0 p-0'><svg className='custom'>
+          <text x="50%" y="100%" textAnchor='middle' dominantBaseline="top">
+              WELL
+            </text>
+          </svg></span>
+          <span className='m-0 p-0'><svg className='custom'>
+            <text x="50%" y="100%" textAnchor='middle' dominantBaseline="top">
+              DONE!
+            </text>
+          </svg></span>
         </div>
         <div className='flex align-center justify-center'>
           <Confetti active={activeProp} config={config} />
         </div>
         <div className='flex flex-col text-white text-center font-extrabold m-24'>
           <span className='[font-size:55px]'>Your time is</span>
-          <SvgLines animate={true} duration={3000}>
-            <svg width="100" height="100">
-              <text x="50%" y="50%" font-size="50" text-anchor="middle" dominant-baseline="middle">{Math.floor(time / 60) + ':' + (time % 60 < 10 ? '0' + time % 60 : time % 60)}</text>
-            </svg>
-          </SvgLines>
           <span className='[font-size:145px] [animation:opacity_infinite_1s,scale_infinite_1s]'>{Math.floor(time / 60) + ':' + (time % 60 < 10 ? '0' + time % 60 : time % 60)}</span>
         </div>
       </div>

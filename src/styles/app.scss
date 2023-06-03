@@ -332,3 +332,34 @@ body {
   margin-right: 7.5px!important;
   margin-left: 7.5px!important;
 }
+
+
+
+svg.custom {
+	font-family: 'Russo One', sans-serif;
+	// position: absolute; 
+	width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+svg.custom text {
+	text-transform: uppercase;
+	animation: stroke 2s linear alternate;
+	stroke-width: 8;
+	stroke: white;
+	font-size: 145px;
+  fill: rgba(72,138,20,0);
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,20,0); stroke: white;
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 8;
+	}
+	70%  {fill: rgba(72,138,20,0); stroke: white; }
+	80%  {fill: rgba(72,138,20,0); stroke: white; stroke-width: 8; }
+	100% {
+		fill: rgba(72,138,20,0);; stroke: rgba(255,255,255,0); 
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
